@@ -1,0 +1,17 @@
+<% if @songs %>
+  <% @songs.each do |song| %>
+    <div class="song">
+      <p>
+        <%= song.song_title %> 
+        (by: <%= song.author %>)
+      </p>
+      <% if song.song_url %>
+        <p>
+          
+        </p>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+<hr/>
+<a href="/songs/new_song">Post a song...</a>
