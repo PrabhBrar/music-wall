@@ -1,28 +1,43 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><%= @user.name %></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/users/logout">Logout</a></li>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
 <div class="title">
 </div>
 <div class="wall">
   <% @songs.each do |song| %>
-    <div class="container">
-      <span>
-        <img src="http://wallpapercave.com/wp/6G3gDoy.jpg" />
-      </span>
-      <span class="song">
-           <%= song.song_title %>
-      </span>
-      <span class="author">  
-          (by: <%= song.author %>)
-      </span>
-      <% if !song.song_url.empty? %>
-        <span class="url">
-            <a href=<%= song.song_url %>><%= song.song_url %></a>
-        </span>
-      <% end %>
-      <span class="timestamp">
-        <%= (Date.today - Date.parse(song.created_at.to_s)).to_i%> days old.
-      </span>
+    <div class="list">
+      <div class="url">
+        <% if !song.song_url.empty? %>
+          <iframe width="80" height="80" src=<%= song.song_url %> frameborder="0" allowfullscreen></iframe>
+        <% else %>
+          <img src="http://wallpapercave.com/wp/6G3gDoy.jpg" />
+        <% end %>
+      </div>
+      <div class="details">
+        <span class="song"><%= song.song_title %></span>   
+        <span class="author">(by: <%= song.author %>)</span>
+        <span class="user">Posted by: <%= User.find(song.user_id).name %></span>
+      </div>
+      <div class="upvote">
+        <a href="/songs/upvote/<%= song.id %>"><i class="tiny material-icons">thumb_up</i></a>
+      </div>
+      <div class="timestamp">
+        <%= (Date.today - Date.parse(song.created_at.to_s)).to_i %> days old.
+      </div>
+      <div class="votes">
+        <%= Vote.where("song_id = ?", song.id).count %> votes.
+      </div>
     </div>
   <% end %>
   <div class="post">
-    <a href="/songs/new_song">Post a song...</a>
+    <a href="/songs/new_song"><i class="custom material-icons">playlist_add</i></a>
   </div>
 </div>

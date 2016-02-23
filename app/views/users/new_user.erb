@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form class="form-horizontal" action="" method="POST" action="/users/new_user">
+        <fieldset>
+          <div id="legend">
+            <legend class="">Register</legend>
+          </div>
+          <% if @user.errors.any? %>
+            <div class="errors">
+              <strong>Some issues with your inputs, please fix them:</strong>
+              <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="control-group">
+            <label class="control-label" for="username">Name</label>
+            <div class="controls">
+              <input type="text" id="name" name="name" placeholder="" class="form-control input-lg" value="<%= @user.name %>">
+              <p class="help-block">Name can contain any letters or numbers.</p>
+            </div>
+          </div>
+       
+          <div class="control-group">
+            <label class="control-label" for="email">E-mail</label>
+            <div class="controls">
+              <input type="email" id="email" name="email" placeholder="" class="form-control input-lg" value="<%= @user.email %>">
+              <p class="help-block">Please provide your E-mail</p>
+            </div>
+          </div>
+       
+          <div class="control-group">
+            <label class="control-label" for="password">Password</label>
+            <div class="controls">
+              <input type="password" id="password" name="password" placeholder="" class="form-control input-lg">
+              <p class="help-block">Password should be at least 6 characters(maximum 20), and must include at least one lowercase letter, one uppercase letter, and one digit</p>
+            </div>
+          </div>
+       
+          <div class="control-group">
+            <!-- Button -->
+            <div class="controls">
+              <button class="btn btn-success">Register</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div> 
+  </div>
+</div>

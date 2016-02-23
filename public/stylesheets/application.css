@@ -1,3 +1,26 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#full-screen-background-image {
+  z-index: -999;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#wrapper {
+  position: relative;
+  min-height: 400px;
+}
+
 .title {
   background-image: url('https://bankstreetmusic.pbworks.com/f/1348250071/Music.jpeg');
   background-repeat: no-repeat;
@@ -5,6 +28,11 @@
   background-size: 100% 300px;
   height: 300px;
   width: 100%;
+  margin-top: 30px;
+}
+
+.title h3 {
+  margin-top: 0;
 }
 
 .wall h1 {
@@ -13,65 +41,85 @@
   color: #FFA358;
 }
 
-.wall {
-  background-image: url('http://www.strengthcenternj.com/wp-content/uploads/2015/10/Black-Brick-Wall-Background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.container {
+.list {
   position: relative;
-  height: 50px;
+  height: 100px;
 }
 
-.container img {
-  height: 23px;
-  width: 23px;
+.list img {
+  height: 80px;
+  width: 80px;
 }
 
-.container .song {
+.list .timestamp {
+  display: inline-block;
+  position: absolute;
+  top: 65px;
+  left: 175px;
+  font-size: 10px;
+  color: #FFFFFF;
+}
+
+.list .url {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.list .details {
+  display: inline-block;
+  position: absolute;
+  left: 130px;
+  top: 30px;
+}
+
+.list .votes {
+  display: inline-block;
+  position: absolute;
+  left: 275px;
+  top: 65px;
+  font-size: 10px;
+  color: #FFFFFF;
+}
+
+.details .song {
   font-family: cursive;
   font-size: 23px;
   color: #FFFFFF;
 }
 
-.container .author {
+.details .author {
   font-family: "Comic Sans MS";
   font-size: 12px;
   color: #FFFFFF;
 }
 
-.container .timestamp {
-  position: absolute;
-  top: 30px;
-  left: 28px;
-  font-size: 10px;
+.details .user {
+  font-size: 12px;
   color: #FFFFFF;
+  margin-left: 10px;
 }
 
-.container .url a {
-  margin-left: 30px;
-  color: #FFA358;
-}
-
-.wall .post {
-  text-align: center;
+i.tiny.material-icons {
+  position: absolute;
+  left: 130px;
+  top: 60px;
 }
 
 .wall .post a {
   color: #F65151;
+  float: right;
 }
 
 .form {
   position: relative;
-  /* top: 80px; */
   height: 300px;
   width: 700px;
 }
 
 .form input[type="text"] {
-    width: 600px;
-    border-radius: 10px
+  width: 600px;
+  border-radius: 10px
 }
 
 .form input[type="submit"] {
@@ -85,24 +133,109 @@
 }
 
 .form label {
-    width: 80px;
-    clear: left;
-    text-align: right;
-    color: #F65151;
-    margin-right: 3px;
+  width: 80px;
+  clear: left;
+  text-align: right;
+  color: #F65151;
+  margin-right: 3px;
 }
 
 .form input, .form label {
-    float: left;
-    margin-top: 10px;
+  float: left;
+  margin-top: 10px;
 }
 
 hr{
-    padding: 0px;
-    margin: 0px;    
-  }
+  padding: 0px;
+  margin: 0px;    
+}
 
-.wall .errors {
+.wall .errors, .main .errors {
   margin-left: 50px;
-  color: #ff4c4c;
+  color: #FFFFFF;
+}
+
+.form-signin
+{
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+  margin-bottom: 10px;
+}
+.form-signin .checkbox
+{
+  font-weight: normal;
+}
+.form-signin .form-control
+{
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form-signin .form-control:focus
+{
+  z-index: 2;
+}
+.form-signin input[type="text"]
+{
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"]
+{
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.account-wall
+{
+  margin-top: 20px;
+  padding: 40px 0px 20px 0px;
+  background-color: #f7f7f7;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.login-title
+{
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 400;
+  display: block;
+}
+.profile-img
+{
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.need-help
+{
+  margin-top: 10px;
+}
+.new-account
+{
+  display: block;
+  margin-top: 10px;
+  color: #FFFFFF;
+}
+
+.col-md-6, #legend legend{
+    color: #FFFFFF;
+}
+
+.custom.material-icons {
+    font-size: 50px;
 }
