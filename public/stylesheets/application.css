@@ -1,0 +1,108 @@
+.title {
+  background-image: url('https://bankstreetmusic.pbworks.com/f/1348250071/Music.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 300px;
+  height: 300px;
+  width: 100%;
+}
+
+.wall h1 {
+  margin-top: -1px;
+  margin-left: 40px;
+  color: #FFA358;
+}
+
+.wall {
+  background-image: url('http://www.strengthcenternj.com/wp-content/uploads/2015/10/Black-Brick-Wall-Background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  height: 50px;
+}
+
+.container img {
+  height: 23px;
+  width: 23px;
+}
+
+.container .song {
+  font-family: cursive;
+  font-size: 23px;
+  color: #FFFFFF;
+}
+
+.container .author {
+  font-family: "Comic Sans MS";
+  font-size: 12px;
+  color: #FFFFFF;
+}
+
+.container .timestamp {
+  position: absolute;
+  top: 30px;
+  left: 28px;
+  font-size: 10px;
+  color: #FFFFFF;
+}
+
+.container .url a {
+  margin-left: 30px;
+  color: #FFA358;
+}
+
+.wall .post {
+  text-align: center;
+}
+
+.wall .post a {
+  color: #F65151;
+}
+
+.form {
+  position: relative;
+  /* top: 80px; */
+  height: 300px;
+  width: 700px;
+}
+
+.form input[type="text"] {
+    width: 600px;
+    border-radius: 10px
+}
+
+.form input[type="submit"] {
+  border-radius: 10px;
+}
+
+.form .button {
+  position: absolute;
+  right: 20px;
+  bottom: 150px;
+}
+
+.form label {
+    width: 80px;
+    clear: left;
+    text-align: right;
+    color: #F65151;
+    margin-right: 3px;
+}
+
+.form input, .form label {
+    float: left;
+    margin-top: 10px;
+}
+
+hr{
+    padding: 0px;
+    margin: 0px;    
+  }
+
+.wall .errors {
+  margin-left: 50px;
+  color: #ff4c4c;
+}

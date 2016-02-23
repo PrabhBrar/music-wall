@@ -1,17 +1,28 @@
-<% if @songs %>
+<div class="title">
+</div>
+<div class="wall">
   <% @songs.each do |song| %>
-    <div class="song">
-      <p>
-        <%= song.song_title %> 
-        (by: <%= song.author %>)
-      </p>
-      <% if song.song_url %>
-        <p>
-          
-        </p>
+    <div class="container">
+      <span>
+        <img src="http://wallpapercave.com/wp/6G3gDoy.jpg" />
+      </span>
+      <span class="song">
+           <%= song.song_title %>
+      </span>
+      <span class="author">  
+          (by: <%= song.author %>)
+      </span>
+      <% if !song.song_url.empty? %>
+        <span class="url">
+            <a href=<%= song.song_url %>><%= song.song_url %></a>
+        </span>
       <% end %>
+      <span class="timestamp">
+        <%= (Date.today - Date.parse(song.created_at.to_s)).to_i%> days old.
+      </span>
     </div>
   <% end %>
-<% end %>
-<hr/>
-<a href="/songs/new_song">Post a song...</a>
+  <div class="post">
+    <a href="/songs/new_song">Post a song...</a>
+  </div>
+</div>
